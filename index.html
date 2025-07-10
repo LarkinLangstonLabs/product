@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Larkin Langston Product Portal - Access our Web Development, Blog Content, and SEO services to grow your brand.">
+    <meta name="keywords" content="web development, blog content, SEO services, Larkin Langston">
     <title>Larkin Langston | Product Portal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -58,11 +60,16 @@
             background-color: #f8f8f8;
             border-color: #c9c9c9;
         }
+        .category-filter:focus {
+            outline: 2px solid #FF8C00;
+            outline-offset: 2px;
+        }
 
         .search-input-wrapper {
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
             border: 1px solid #dadce0;
             transition: all 0.2s ease-in-out;
+            max-width: 100%;
         }
         .search-input-wrapper:focus-within {
             box-shadow: 0 1px 6px rgba(255, 140, 0, .28); /* Orange focus shadow */
@@ -115,8 +122,15 @@
         .bg-product-blog-content { background-color: #FFCC80; color: #EF6C00; } /* Medium orange with darker text */
         .bg-product-marketing { background-color: #FFAB91; color: #D84315; } /* Warm red-orange with darker text */
 
+        /* Responsive tweaks */
+        @media (max-width: 640px) {
+            .category-filter {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+            }
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;2&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-50 min-h-screen text-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -133,15 +147,15 @@
                 <div class="relative flex-grow search-input-wrapper rounded-full bg-white overflow-hidden max-w-2xl w-full">
                     <input type="text" placeholder="Search your products..." class="search-box w-full py-3 pl-12 pr-4 rounded-full text-lg focus:ring-0" aria-label="Search products">
                     <div class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-                        <i class="fas fa-search text-lg"></i>
+                        <i class="fas fa-search text-lg" aria-hidden="true"></i>
                     </div>
                 </div>
                 
                 <div class="flex flex-wrap gap-2 md:gap-3 items-center justify-center md:justify-end">
-                    <button class="category-filter active px-4 py-2 rounded-full text-sm font-medium" data-category="all">All</button>
-                    <button class="category-filter px-4 py-2 rounded-full text-sm font-medium" data-category="web-dev">Web Development</button>
-                    <button class="category-filter px-4 py-2 rounded-full text-sm font-medium" data-category="blog-content">Blog Content</button>
-                    <button class="category-filter px-4 py-2 rounded-full text-sm font-medium" data-category="marketing">SEO Company</button>
+                    <button class="category-filter active px-4 py-2 rounded-full text-sm font-medium" data-category="all" role="button" tabindex="0">All</button>
+                    <button class="category-filter px-4 py-2 rounded-full text-sm font-medium" data-category="web-dev" role="button" tabindex="0">Web Development</button>
+                    <button class="category-filter px-4 py-2 rounded-full text-sm font-medium" data-category="blog-content" role="button" tabindex="0">Blog Content</button>
+                    <button class="category-filter px-4 py-2 rounded-full text-sm font-medium" data-category="marketing" role="button" tabindex="0">SEO Company</button>
                 </div>
             </div>
 
@@ -150,7 +164,7 @@
                     <div class="p-5 flex flex-col h-full">
                         <div class="flex items-start mb-3">
                             <div class="w-11 h-11 rounded-full flex items-center justify-center mr-3 flex-shrink-0 bg-product-web-dev">
-                                <i class="fas fa-code text-lg"></i>
+                                <i class="fas fa-code text-lg" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h3 class="font-medium text-lg text-gray-800">Larkin Web Solutions</h3>
@@ -162,7 +176,7 @@
                             <span class="text-gray-500 text-xs">Last used: Today</span>
                             <a href="https://larkinlangston.com" class="text-orange-600 hover:text-orange-800 font-medium flex items-center group">
                                 Open 
-                                <i class="fas fa-arrow-right ml-1 text-xs group-hover:translate-x-1 transition-transform duration-200"></i>
+                                <i class="fas fa-arrow-right ml-1 text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -172,19 +186,19 @@
                     <div class="p-5 flex flex-col h-full">
                         <div class="flex items-start mb-3">
                             <div class="w-11 h-11 rounded-full flex items-center justify-center mr-3 flex-shrink-0 bg-product-blog-content">
-                                <i class="fas fa-pencil-alt text-lg"></i>
+                                <i class="fas fa-pencil-alt text-lg" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h3 class="font-medium text-lg text-gray-800">Larkin Content Hub</h3>
                                 <span class="text-xs text-orange-600 font-medium bg-orange-50 px-2 py-0.5 rounded-full mt-1 inline-block">Active</span>
                             </div>
                         </div>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">Manage and publish your blog content, articles, and thought leadership pieces with ease.</p>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">Share and manage your blog content, articles, and thought leadership pieces with ease.</p>
                         <div class="flex justify-between items-center text-sm">
                             <span class="text-gray-500 text-xs">Last used: 1 day ago</span>
                             <a href="https://blog.larkinlangston.com" class="text-orange-600 hover:text-orange-800 font-medium flex items-center group">
                                 Open 
-                                <i class="fas fa-arrow-right ml-1 text-xs group-hover:translate-x-1 transition-transform duration-200"></i>
+                                <i class="fas fa-arrow-right ml-1 text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -194,7 +208,7 @@
                     <div class="p-5 flex flex-col h-full">
                         <div class="flex items-start mb-3">
                             <div class="w-11 h-11 rounded-full flex items-center justify-center mr-3 flex-shrink-0 bg-product-marketing">
-                                <i class="fas fa-chart-bar text-lg"></i>
+                                <i class="fas fa-chart-bar text-lg" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h3 class="font-medium text-lg text-gray-800">Larkin SEO Group</h3>
@@ -206,7 +220,28 @@
                             <span class="text-gray-500 text-xs">Last used: 2 hours ago</span>
                             <a href="https://ads.larkinlangston.com" class="text-orange-600 hover:text-orange-800 font-medium flex items-center group">
                                 Open 
-                                <i class="fas fa-arrow-right ml-1 text-xs group-hover:translate-x-1 transition-transform duration-200"></i>
+                                <i class="fas fa-arrow-right ml- lair-1 text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl border-dashed border-2 border-gray-300" data-category="all">
+                    <div class="p-5 flex flex-col h-full">
+                        <div class="flex items-start mb-3">
+                            <div class="w-11 h-11 rounded-full flex items-center justify-center mr-3 flex-shrink-0 bg-orange-100">
+                                <i class="fas fa-shopping-cart text-lg" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-lg text-gray-800">Explore More Products</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">Discover additional services and solutions on our marketplace.</p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-500 text-xs"></span>
+                            <a href="https://marketplace.larkinlangston.com" class="text-orange-600 hover:text-orange-800 font-medium flex items-center group">
+                                Browse Marketplace
+                                <i class="fas fa-arrow-right ml-1 text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -219,23 +254,27 @@
         </footer>
     </div>
 
+    <div class="fab" role="button" aria-label="Contact Support">
+        <i class="fas fa-headset" aria-hidden="true"></i>
+    </div>
+
     <script>
-        // Filter functionality
         document.addEventListener('DOMContentLoaded', function() {
             const filterButtons = document.querySelectorAll('.category-filter');
             const productCards = document.querySelectorAll('.product-card');
             const searchBox = document.querySelector('.search-box');
-            
-            // Function to apply filters and search
+            let debounceTimeout;
+
             function applyFilters() {
                 const searchTerm = searchBox.value.toLowerCase();
                 const activeCategoryButton = document.querySelector('.category-filter.active');
                 const currentCategory = activeCategoryButton ? activeCategoryButton.dataset.category : 'all';
+                let visibleCards = 0;
 
                 productCards.forEach(card => {
-                    // Always show the "Explore More Products" card
                     if (card.classList.contains('border-dashed')) {
                         card.style.display = 'block';
+                        visibleCards++;
                         return;
                     }
 
@@ -245,29 +284,46 @@
 
                     const matchesSearch = (title.includes(searchTerm) || description.includes(searchTerm));
                     const matchesCategory = (currentCategory === 'all' || cardCategory === currentCategory);
-                    
+
                     if (matchesSearch && matchesCategory) {
                         card.style.display = 'block';
+                        visibleCards++;
                     } else {
                         card.style.display = 'none';
                     }
                 });
+
+                const grid = document.querySelector('.grid');
+                let noResults = grid.querySelector('.no-results');
+                if (visibleCards === 0) {
+                    if (!noResults) {
+                        noResults = document.createElement('div');
+                        noResults.className = 'no-results text-center text-gray-500 py-8';
+                        noResults.textContent = 'No products match your search or filter.';
+                        grid.appendChild(noResults);
+                    }
+                } else if (noResults) {
+                    noResults.remove();
+                }
             }
 
-            // Category filter
             filterButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    // Update active state
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
-                    applyFilters(); // Re-apply filters
+                    applyFilters();
                 });
             });
-            
-            // Search functionality
-            searchBox.addEventListener('input', applyFilters); // Re-apply filters on input
 
-            // Trigger initial filter to show all products if no category is active
+            searchBox.addEventListener('input', () => {
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(applyFilters, 300);
+            });
+
+            document.querySelector('.fab').addEventListener('click', () => {
+                window.location.href = 'https://larkinlangston.com/contact';
+            });
+
             document.querySelector('.category-filter[data-category="all"]').click();
         });
     </script>
